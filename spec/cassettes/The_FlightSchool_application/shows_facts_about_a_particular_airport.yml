@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://services.faa.gov/airport/status/SFO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      Host:
+      - services.faa.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 09 Apr 2017 21:14:29 GMT
+      Server:
+      - Apache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Set-Cookie:
+      - BIGipServerpool_prd_chh_cf_tr_http=2042802843.20480.0000; path=/; Httponly
+      - CFID=11876600; Expires=Tue, 02-Apr-2047 21:14:29 GMT; Path=/; HttpOnly
+      - CFTOKEN=b99ccc8c9100e9f1-4DAE5B0F-CE25-246A-3145508D5C1D57B0; Expires=Tue,
+        02-Apr-2047 21:14:29 GMT; Path=/; HttpOnly
+      - JSESSIONID=8666D776DA90E3127422DB56A2CA9D2F.websvc; Path=/; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, OPTIONS
+      Version-Requested:
+      - Any
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: '{"delay":"false","IATA":"SFO","state":"California","name":"San Francisco
+        International","weather":{"weather": "Over"},"ICAO":"KSFO","city":"San
+        Francisco","status":{"reason":"No known delays for this airport.","closureBegin":"","endTime":"","minDelay":"","avgDelay":"","maxDelay":"","closureEnd":"","trend":"","type":""}} '
+    http_version:
+  recorded_at: Sun, 09 Apr 2017 21:14:39 GMT
+recorded_with: VCR 3.0.3

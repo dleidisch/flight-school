@@ -7,4 +7,5 @@ group :test do
   gem "rspec", "~> 3.0"
   gem "rack-test", "~> 0.6"
   gem "webmock", "~> 1.24"
+  gem "vcr"
 end

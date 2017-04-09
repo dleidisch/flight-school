@@ -20,25 +20,25 @@ RSpec.describe "The FlightSchool application" do
     WebMock.disable_net_connect!
   end
 
-  it "shows a list of common airports" do
+  it "shows a list of common airports", vcr: true do
     get "/"
     expect(last_response).to be_ok
     expect(last_response.body).to include("Current status of airports")
   end
 
-  it "shows facts about a particular airport" do
+  it "shows facts about a particular airport", vcr: true do
     get "/airports/SFO"
     expect(last_response).to be_ok
     expect(last_response.body).to include("San Francisco")
   end
 
-  it "returns a 404 if the airport cannot be found" do
+  it "returns a 404 if the airport cannot be found", vcr: true do
     get "/airports/EDI"
     expect(last_response).to be_not_found
     expect(last_response.body).to include("Couldn't find that airport!")
   end
 
-  it "has a JSON API" do
+  it "has a JSON API", vcr: true do
     get "/api/airports/SFO"
     expect(last_response).to be_ok
 
